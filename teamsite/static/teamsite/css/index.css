@@ -1,0 +1,57 @@
+.download{
+    background-color:rgb(167, 196, 255);
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.download__select__btn{
+    background: rgba(255, 255, 255, 0.24);
+    padding: 8px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+}
+.download__select__btn_active{
+    background: rgba(255, 255, 255, 0.64);
+}
+.download__guide{
+    display: none;
+}
+.download__guide_active{
+    display: block;
+}
+.download__guide > ol> li{
+    list-style: decimal;
+}
+.download__guide > ol> li > ul{
+    padding-left: 20px;
+}
+.download__guide > ol> li > ul>li{
+    list-style: circle;
+}
+.section{
+    margin-bottom: 20px;
+}
+
+.info__animation{
+    width: 300px;
+    height: calc(300px * 0.5625);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.info__desc{
+    display: flex;
+    gap: 20px;
+}
+@media(max-width: 768px){
+    .info__desc{
+        flex-direction: column;
+        align-items: center;
+    }
+    .info__animation{
+        width: 90%;
+        height: calc(90% * 0.5625);
+    }
+}
+

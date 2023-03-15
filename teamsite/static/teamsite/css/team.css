@@ -1,0 +1,151 @@
+.team-h1{
+    margin-bottom: 20px;
+}
+@keyframes test{
+    0%{
+        opacity: 0.5;
+        transform: rotateY(180deg);
+    }
+    50%{
+        /* transform: rotateY(180deg); */
+    }
+    100%{
+        opacity: 1;
+        transform: rotateY(360deg);
+    }
+}
+.card .card-description{
+    text-overflow: ellipsis;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 110px;
+    color: white;
+    transition: 0s;
+}
+.card h4{
+    width: 1px;
+}
+.card h3, .card h4{
+    margin: 0;
+    position: absolute;
+    /* overflow: hidden; */
+    transition: .5s;
+    color: black;
+    text-transform: capitalize;
+    /* height: ; */
+}
+.card h4{
+    bottom: 30px;
+}
+.card h3{
+    bottom: 90px;
+}
+.ava{   
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    transition: .5s;
+    top:0px;
+    left:0px;
+    background-size: cover;
+    background-position: center;
+    
+}
+.overlay {
+    margin: 0;
+    height: 170px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 18px;
+    background: linear-gradient(rgba(0,0,0,0), rgba(255,255,255,0.7));
+    /* background-color: red; */
+}
+.card-holder{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.email{
+    position: absolute;
+    top: 80px;
+    overflow: hidden;
+    height: 100px;
+    width: 0px;
+    transition-duration: 0s;
+    transition-delay: 0s;
+    color: white
+}
+.card{
+    height: 500px;
+    /* padding: 10px; */
+    /* border: 1px solid black; */
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    animation: 1s ease-out 0s 1 test;
+    animation-fill-mode: forwards;
+    
+}
+.card:hover>.ava{
+    transform: rotateY(180deg);
+    /* filter: blur(2px); */
+    filter: brightness(50%);
+}
+.card:hover>div>.card-description{
+    transition: 1.5s;
+    height: 350px;
+}
+.card:hover>.overlay{
+    background: none;
+}
+.card:hover>.overlay>.email{
+    transition-duration: 1s;
+    transition-delay: .5s;
+    width: 100%;
+}
+.card:hover>div>h3{
+    transform: translateY(-375px);
+    color: white;
+}
+.card:hover>div>h4{
+    transform: translateY(-375px);
+    color: white;
+}
+@media(max-width: 810px){
+    .card-holder{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 620px){
+    .card{
+        height: 300px;
+    }
+    .overlay{
+        font-size: 14px;
+    }
+    .card-holder{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card:hover>div>h3{
+        transform: translateY(-160px);
+        color: white;
+    }
+    .card:hover>div>h4{
+        transform: translateY(-180px);
+        color: white;
+    }
+    .email{
+        top: 80px;
+    }
+    .card .card-description{
+        top: 100px;
+    }
+    .card:hover>.overlay{
+        background: linear-gradient(rgba(0,0,0,0), rgba(255,255,255,1) 95%);
+        
+    }
+}

@@ -1,0 +1,54 @@
+{% extends 'teamsite/template.html' %}
+{% load static %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'teamsite/css/partnership.css' %}">
+
+{% endblock  %}
+{% block content %}
+    <h1>Partnership</h1>
+    <p>We cooperate with various Russian and foreign teams and are directly involved in experimental work.</p>
+    <div class='partnership-map'>
+        <i class="fa-solid fa-location-dot marker m1"></i>
+        <div class="description m1-description">
+            <h3>Standford</h3>
+            <p>
+                SLAC National Accelerator Laboratory<br />FACET experiment
+            </p>
+        </div>
+        <i class="fa-solid fa-location-dot marker m2"></i>
+        <div class="description m2-description">
+            <h3>Geneva</h3>
+            <p>
+                CERN<br />AWAKE experiment
+            </p>
+        </div>
+        <i class="fa-solid fa-location-dot marker m3"></i>
+
+        <div class="description m3-description">
+            <h3>Irkutsk</h3>
+            <p>
+                Irkutsk Supercomputer Center of the SB RAS
+            </p>
+        </div>        
+
+        <i class="fa-solid fa-location-dot marker m4"></i>
+        <div class="description m4-description">
+            <h3>Novosibirsk</h3>
+            <p>
+                Budker Institute of Nuclear Physics<br />
+                Institute of Laser Physics<br />
+                Novosibirsk State University
+            </p>
+        </div>
+
+        <i class="fa-solid fa-location-dot marker m5"></i>
+        <div class="description m5-description">
+            <h3>Nizhniy Novgorod</h3>
+            <p>
+                XCELS experiment
+            </p>
+        </div>
+    </div>
+
+{% endblock  %}

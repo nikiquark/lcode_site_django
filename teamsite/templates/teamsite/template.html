@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'teamsite/css/null.css' %}"/>
+    <link rel="stylesheet" href="{% static 'teamsite/css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'teamsite/css/template.css' %}"/>
+    {% block css %}{% endblock css %}
+</head>
+<body>
+    <header class="header header_collapse">
+        <p class="header__logo"><a href="{% url 'index' %}">LCODE</a></p>
+        <nav class="header__nav">
+            <ul>
+                <li>
+                    <a href="{% url 'index' %}">About</a>
+                </li>
+                <li>
+                    <a href="{% url 'index' %}">Examples</a>
+                </li>
+                {% comment %} <li>
+                    <a href='https://lcode.info/wiki/'>Wiki</a>
+                </li> {% endcomment %}
+                <li>
+                    <a href="{% url 'team' %}">Team</a>
+                </li>
+                <li>
+                    <a href="{% url 'publications' %}">Publications</a>
+                </li>                
+            </ul>
+        </nav>
+        <div class="header__buttons">
+            <img class="header__buttons__setting" src="{% static 'teamsite/icons/setting.svg' %}"/>
+            <img class="header__buttons__menu" src="{% static 'teamsite/icons/menu-hamburger.svg' %}/" alt="menu-button"/>
+        </div>
+    </header>
+    <div class="header__setings">
+        <div class="lang_select">
+            EN | RU
+        </div>
+        <ul>
+            <li>
+                <a target="_blank" href='https://lcode.info/wiki/'>Wiki</a>
+            </li>
+            <li>
+                <a target="_blank" href='/admin'>Admin</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        {% block content %}{% endblock content %}
+    </div> 
+    <footer class="footer">
+        © lcode team
+    </footer>
+    <script src="{% static 'teamsite/js/navbar.js' %}"></script>
+</body>
+</html>

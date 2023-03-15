@@ -1,0 +1,23 @@
+{% extends 'teamsite/template.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'teamsite/css/team.css' %}">
+{% endblock  %}
+{% block content %}
+<h1 class="team-h1">We are</h1>
+<div class="card-holder">
+    {% for item in persons %}
+    {% comment %} style={{animationDelay: `${i/5}s`}} {% endcomment %}
+        <div class="card" >
+            <div class="ava" style="background-image: url('{{item.picture.url}}')"></div>
+            <div class="overlay">
+                {% comment %} <h3>{{item.post}}</h3> {% endcomment %}
+                <h4>{{item.full_name}}</h4>
+                <p class='email'>{{item.email}}</p>
+                <p class='card-description'>{{item.bio}}</p>
+            </div>
+        </div>  
+    {% endfor %}             
+</div>
+
+{% endblock  %}

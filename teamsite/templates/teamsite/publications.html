@@ -1,0 +1,21 @@
+{% extends 'teamsite/template.html' %}
+{% load static %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'teamsite/css/publications.css' %}">
+
+{% endblock  %}
+{% block content %}
+    <h1>Publications</h1>
+    {% for year, pubs in publications.items %}
+        <div class='publications__year'>
+            <h3>{{year}}</h3>
+            {% for pub in pubs%}
+                <div class='publications__article'>
+                    <p><a href={{pub.url}}>{{pub.title}}</a></p>
+                    <p>{{pub.description}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock  %}

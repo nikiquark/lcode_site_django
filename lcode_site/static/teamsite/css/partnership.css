@@ -1,0 +1,130 @@
+
+.partnership-map{
+    width: min(900px,  calc(100vw - 40px));
+    height: calc(min(900px,  calc(100vw - 40px)) / 2.026915);
+    position: relative;
+    color: orange;
+    background-image: url(../images/worldmap.jpg);
+    background-size:100%;
+}
+
+.marker{
+    font-size: 30px;
+    position: absolute;
+    transition: .4s;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    opacity: 0;
+    animation: 1s ease-out 0s 1 slideInDown;
+    animation-fill-mode: forwards;
+    
+}
+.marker:hover{
+    animation-fill-mode:none;
+    opacity: 1;
+    transform: scale(1.5) translateY(-5px);
+}
+
+.description{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all .4s ease-in-out;
+}
+.description h3{
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
+.description p{
+    margin: 0;
+    padding: 0;
+}
+
+.m1{
+    left: calc(9% - 15px);
+    top: calc(32% - 30px);
+    animation-delay: .7s;
+}
+.m1-description{
+    left: max(calc(9% - 100px), 0px);
+    top: calc(40%);
+}
+.m1:hover~.m1-description{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.m2{
+    left: calc(48% - 15px);
+    top: calc(24% - 30px);
+    animation-delay: 1.7s;
+
+}
+.m2-description{
+    left: max(calc(48% - 100px), 0px);
+    top: calc(30%);
+}
+.m2:hover~.m2-description{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.m3{
+    left: calc(75% - 15px);
+    top: calc(20% - 30px);
+    animation-delay: 1.3s;
+
+}
+.m3-description{
+    left: min(calc(75% - 100px), calc(100% - 220px));
+    top: calc(27%);
+}
+.m3:hover~.m3-description{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.m4{
+    left: calc(65% - 15px);
+    top: calc(19% - 30px);
+    animation-delay: 2s;
+
+}
+.m4-description{
+    left: min(calc(65% - 100px), calc(100% - 220px));
+    top: calc(26%);
+}
+.m4:hover~.m4-description{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.m5{
+    left: calc(57% - 15px);
+    top: calc(18% - 30px);
+    animation-delay: 2.5s;
+
+}
+.m5-description{
+    left: min(calc(57% - 100px), calc(100% - 220px));
+    top: calc(28%);
+}
+.m5:hover~.m5-description{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+@keyframes slideInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

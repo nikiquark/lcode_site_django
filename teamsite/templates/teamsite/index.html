@@ -1,0 +1,90 @@
+{% extends "teamsite/template.html" %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'teamsite/css/index.css' %}"/>
+{% endblock css %}
+{% block content %}
+    <section class="section info">
+        <h2>LCODE Software</h2>
+        <div class="info__desc">
+            <img class="info__animation"
+                 src="{% static "teamsite/images/SMI_movie.gif" %}"/>
+            <p>
+                LCODE is a freely-distributed code for simulations of particle beam-driven plasma wake eld acceleration.
+                The code is 2d3v, with both plane and axisymmetric geometries possible.
+                In the code, the simulation window moves with the light velocity, and the quasi-static approximation is used for calculating plasma response.
+                The beams are modeled by fully relativistic macro-particles. The plasma is modeled either by macro-particles (kinetic solver), or as the electron uid ( uid solver).
+                Transversely inhomogeneous plasmas, hot plasmas, non-neutral plasmas, and mobile ions are possible with the kinetic solver.
+                The code is furnished with extensive diagnosing tools which include the possibility of in-flight graphical presentation of the results.
+            </p>
+        </div>
+    </section>
+    <section class="section download">
+        <h2>Download</h2>
+        <div class="download__select">
+            <button data-system='win'
+                    class="download__select__btn download__select__btn_active download__select__btn_win">
+                Windows
+            </button>
+            <button data-system='linux'
+                    class="download__select__btn download__select__btn_linux">Linux</button>
+            <br/>
+        </div>
+        <div class="download__guide download__guide_windows download__guide_active">
+            <ol>
+                <li>
+                    Download <a href="/media/downloads/windows/lcode.exe">lcode</a>.
+                </li>
+                <li>
+                    Install <a href="https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi"
+    target="_blank">MSMPI</a> (runtime)
+                </li>
+                <li>
+                    Read <a target="_blank" href="/media/downloads/manual.pdf">manual</a>
+                </li>
+                <li>
+                    Run it
+                    <ul>
+                        <li>put lcode.exe in working directory with your lcode.cfg and run it with double-click</li>
+                        <li>
+                            put lcode.exe in working directory with your lcode.cfg
+                            and run <span class="code">mpiexec -n &lt;cpu-number&gt; lcode.exe</span>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="download__guide download__guide_linux">
+            <ol>
+                <li>
+                    Download <a href="/media/downloads/linux/lcode-mpi-halfbaked.run">lcode-mpi-halfbaked.run</a>.
+                </li>
+                <li>
+                    <span class="code">lcode-mpi-halfbaked.run</span>, should be executed on working host,
+                    will perform the final compilation step,
+                    linking the otherwise-precompiled LCODE with that host's MPI.
+                    This is theoretically unsupported, but works like a charm.
+                </li>
+                <li>
+                    It will produce <span class="code">lcode</span> in current directory.
+                </li>
+                <li>
+                    Read <a target="_blank" href="/media/downloads/manual.pdf">manual</a>
+                </li>
+                <li>
+                    Run it
+                    <ul>
+                        <li>
+                            put <span class="code">lcode</span> in working directory with your lcode.cfg and run it
+                        </li>
+                        <li>
+                            put <span class="code">lcode</span> in working directory with your lcode.cfg
+                            and run <span class="code">mpiexec -n &lt;cpu-number&gt; lcode</span>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <script src="{% static 'teamsite/js/download_select.js' %}"></script>
+{% endblock content %}
